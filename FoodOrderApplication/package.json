@@ -1,0 +1,18 @@
+{
+  "name": "online_store",
+  "version": "1.0.0",
+  "description": "Online Store",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "*",
+    "ejs": "*",
+    "express-validator": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhilash Kundoor",
+  "license": "ISC"
+}

@@ -1,0 +1,184 @@
+<%
+<!-- Declaring variables for error display -->
+var name = '';
+var phoneNumber = '';
+var email = '';
+var address = '';
+var city = '';
+var province = '';
+var burger = '';
+var pizza = '';
+var coffee = '';
+var pasta = '';
+var sandwich = '';
+var selection = '';
+var nameError = '';
+var phoneNumberError = '';
+var emailError = '';
+var addressError = '';
+var cityError = '';
+var provinceError = '';
+var burgerError = '';
+var pizzaError = '';
+var coffeeError = '';
+var pastaError = '';
+var sandwichError = '';
+var selectionError = '';
+var names = names;
+<!-- Irterating through error array for printing the errors -->
+if(typeof(error) != 'undefined')
+  {
+    for(var error of error)
+    { 
+      switch(error.param){
+        case 'name':        name = error.value;
+                            nameError = error.msg;
+                            break;
+        case 'phoneNumber': phoneNumber = error.value;
+                            phoneNumberError = error.msg;
+                            break;
+        case 'email':       email = error.value;
+                            emailError = error.msg;
+                            break;
+        case 'address':     address = error.value;
+                            addressError = error.msg;
+                            break;
+        case 'city':       	city = error.value;
+                            cityError = error.msg;
+                            break;
+        case 'province':    province = error.value;
+                            provinceError = error.msg;
+                            break;
+        case 'burger':      burger = error.value;
+                            burgerError = error.msg;
+                            break;
+        case 'pizza':       pizza = error.value;
+                            pizzaError = error.msg;
+                            break;
+        case 'coffee':      coffee = error.value;
+                            coffeeError = error.msg;
+                            break;
+        case 'pasta':       pasta = error.value;
+                            pastaError = error.msg;
+                            break;
+        case 'sandwich':    sandwich = error.value;
+                            sandwichError = error.msg;
+                            break;	
+        case 'selection':   selection = error.value;
+                            selectionError = error.msg;
+                            break;
+      }
+    }
+  }
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Food For All</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form name="myForm" action="process" method="POST">
+            <div class="rows">
+                <!-- Blocks with product image, price and input text box -->
+                <div class="columns burger">
+                    <img id="burgerOne" src="images/burger1.jpeg" height="400" width="280">
+                    <img class="productAlternateImages" id="burgerTwo" src="images/burger2.jpeg" height="400" width="282">
+                    <input class="productQuantity" id="burger" placeholder="Enter quantity" type="text" name="burger">
+                    <label class="productPrice" id="burgerPrice">7$</label>
+                    <label class="productName" id="burgerName">Burger</label>
+                </div>
+                <div class="columns pizza">
+                    <img id="pizzaOne" src="images/pizza1.jpeg" height="400" width="280">
+                    <img class="productAlternateImages" id="pizzaTwo" src="images/pizza2.jpeg" height="400" width="282">
+                    <input class="productQuantity" id="pizza" placeholder="Enter quantity" type="text" name="pizza">
+                    <label class="productPrice" id="pizzaPrice">13$</label>
+                    <label class="productName" id="pizzaName">Pizza</label>
+                </div>
+                <div class="columns coffee">
+                    <img id="coffeeOne" src="images/coffee1.jpeg" height="400" width="280">
+                    <img class="productAlternateImages" id="coffeeTwo" src="images/coffee2.jpeg" height="400" width="282">
+                    <input class="productQuantity" id="coffee" placeholder="Enter quantity" type="text" name="coffee">
+                    <label class="productPrice" id="coffeePrice">4$</label>
+                    <label class="productName" id="coffeeName">Coffee</label>
+                </div>
+                <div class="columns pasta">
+                    <img id="pastaOne" src="images/pasta2.jpeg" height="400" width="280">
+                    <img class="productAlternateImages" id="pastaTwo" src="images/pasta1.jpeg" height="400" width="282">
+                    <input class="productQuantity" id="pasta" placeholder="Enter quantity" type="text" name="pasta">
+                    <label class="productPrice" id="pastaPrice">7$</label>
+                    <label class="productName" id="pastaName">Pasta</label>
+                </div>
+                <div class="columns sandwich">
+                    <img id="sandwichOne" src="images/sandwich2.jpeg" height="400" width="280">
+                    <img class="productAlternateImages" id="sandwichTwo" src="images/sandwich1.jpeg" height="400" width="282">
+                    <input class="productQuantity" id="sandwich" placeholder="Enter quantity" type="text" name="sandwich">
+                    <label class="productPrice" id="sandwichPrice">6$</label>
+                    <label class="productName" id="sandwichName">Sandwich</label>
+                </div>
+            </div>
+            <!-- Labels to print errors -->
+            <label class="quantityError"><%= burgerError %></label>
+            <label class="quantityError"><%= pizzaError %></label>
+            <label class="quantityError"><%= coffeeError %></label>
+            <label class="quantityError"><%= pastaError %></label>
+            <label class="quantityError"><%= sandwichError %></label>
+            <label id="selectionError"><%= selectionError %></label>
+            <!-- Input boxes for personal details -->
+            <div class="personalDetails">
+                <label class="titles">Name</label>
+                <input id="name" placeholder="First Last" type="text" name="name"><br/>
+                <label class="errorMessages" id="nameError"><%= nameError %></label>
+                <label class="titles">Province</label>
+                <!-- Province lits -->
+                <select name="province" id="province">
+                    <optgroup>
+                        <option value="Select">Select</option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="British Columbia">British Columbia</option>
+                        <option value="Mantioba">Mantioba</option>
+                        <option value="New-Brunswick">New-Brunswick</option>
+                        <option value="Newfoundland & Labrador">Newfoundland & Labrador</option>
+                        <option value="Northwest Territories">Northwest Territories</option>
+                        <option value="Nova Scotia">Nova Scotia</option>
+                        <option value="Nunavut">Nunavut</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Prince Edward Island">Prince Edward Island</option>
+                        <option value="Quebec">Quebec</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Yukon">Yukon</option>
+                    </optgroup>
+                </select>
+                <label class="errorMessages" id="provinceError"><%= provinceError %></label>
+                <br>
+                <label class="titles">Address</label>
+                <input id="address" placeholder="Address" type="text" name="address"><br/>
+                <label class="errorMessages" id="addressError"><%= addressError %></label>
+                <!-- Personal details input boxes -->
+                <label class="titles">Phone</label>
+                <input id="phoneNumber" placeholder="1234567890" type="text" name="phoneNumber"><br/>
+                <label class="errorMessages" id="numberError"><%= phoneNumberError %></label>
+                <br>
+                <br>
+                <label class="titles">City</label>
+                <input id="city" placeholder="City" type="text" name="city"><br/>
+                <label class="errorMessages" id="cityError"><%= cityError %></label>
+                <label class="titles">Email</label>
+                <input id="email" placeholder="abc@abc.com" type="text" name="email"><br/>
+                <label class="errorMessages" id="emailError"><%= emailError %></label>
+            </div>
+            <input class="submitButton" type="submit" value="Checkout">
+        </form> 
+    </main>
+    <footer></footer>
+</body>
+</html>
