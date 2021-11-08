@@ -1,0 +1,55 @@
+// Jquery functions for show/hide images
+$(document).ready(function(){
+    // Functions for image click
+    $('#burger').hide();
+    $('#burgerTwo').hide();
+    $('#pizza').hide();
+    $('#pizzaTwo').hide();
+    $('#coffee').hide();
+    $('#coffeeTwo').hide();
+    $('#pasta').hide();
+    $('#pastaTwo').hide();
+    $('#sandwich').hide();
+    $('#sandwichTwo').hide();
+    $('#burgerPrice').hide();
+    $('#pizzaPrice').hide();
+    $('#coffeePrice').hide();
+    $('#pastaPrice').hide();
+    $('#sandwichPrice').hide();
+    // Hide first image and show second image with price and input box
+    $('#burgerOne').click(function(){
+        $('#burgerOne').css('visibility','hidden');
+        $('#burgerName').css('visibility','hidden');
+        $('#burgerTwo').show();
+        $('#burgerPrice').show();
+        $('#burger').show();
+    });
+    $('#pizzaOne').click(function(){
+        $('#pizzaOne').css('visibility','hidden');
+        $('#pizzaName').css('visibility','hidden');
+        $('#pizzaPrice').show();
+        $('#pizzaTwo').show();
+        $('#pizza').show();
+    });
+    $('#coffeeOne').click(function(){
+        $('#coffeeOne').css('visibility','hidden');
+        $('#coffeeName').css('visibility','hidden');
+        $('#coffeePrice').show();
+        $('#coffeeTwo').show();
+        $('#coffee').show();
+    });
+    $('#pastaOne').click(function(){
+        $('#pastaOne').css('visibility','hidden');
+        $('#pastaName').css('visibility','hidden');
+        $('#pastaPrice').show();
+        $('#pastaTwo').show();
+        $('#pasta').show();
+    });
+    $('#sandwichOne').click(function(){
+        $('#sandwichOne').css('visibility','hidden');
+        $('#sandwichName').css('visibility','hidden');
+        $('#sandwichPrice').show();
+        $('#sandwichTwo').show();
+        $('#sandwich').show();
+    });
+});
