@@ -11,9 +11,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node index.js",
-    "start": "node index.js"
+    "test": "node index.js"
   },
   "author": "Abhilash Kundoor",
-  "license": "ISC"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
 }
