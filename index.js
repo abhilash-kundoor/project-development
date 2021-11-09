@@ -1,6 +1,7 @@
 // Adding the required libraries
 const express = require('express');
 const path = require('path');
+const server = require('http').createServer(express);
 const port = process.env.PORT || parseInt(process.argv.pop()) || 3000;
 
 const {check, validationResult, body} = require('express-validator');
