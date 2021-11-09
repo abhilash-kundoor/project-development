@@ -209,7 +209,7 @@ app.post('/process',[
         res.render('receipt', pageData);
     }
 });
-// Listening on port 443
-app.listen(443);
+// Listening on port 80
+app.listen(80);
 
-console.log('Everything executed fine.. website at port 443....');
+console.log('Everything executed fine.. website at port 80....');
