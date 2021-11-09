@@ -1,6 +1,7 @@
 // Adding the required libraries
 const express = require('express');
 const path = require('path');
+const port = process.env.PORT || 80;
 
 const {check, validationResult, body} = require('express-validator');
 
@@ -209,7 +210,7 @@ app.post('/process',[
         res.render('receipt', pageData);
     }
 });
-// Listening on port 8080
-app.listen(8080);
+// Listening on port 80
+app.listen(80);
 
-console.log('Everything executed fine.. website at port 8080....');
+console.log('Everything executed fine.. website at port 80....');

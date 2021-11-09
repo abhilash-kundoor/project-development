@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Online Store",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhilash-kundoor/project-development/"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "body-parser": "*",
@@ -11,9 +15,11 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node index.js",
-    "start": "node index.js"
+    "test": "node index.js"
   },
   "author": "Abhilash Kundoor",
-  "license": "ISC"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
 }
