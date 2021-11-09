@@ -1,7 +1,7 @@
 // Adding the required libraries
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 
 const {check, validationResult, body} = require('express-validator');
 
@@ -211,6 +211,6 @@ app.post('/process',[
     }
 });
 // Listening on port 80
-app.listen(80);
+app.listen(3000);
 
 console.log('Everything executed fine.. website at port 80....');
